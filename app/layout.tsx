@@ -1,16 +1,16 @@
 import type { Metadata } from "next";
-import { Geist, Jost } from "next/font/google";
+import { Jost, Ovo } from "next/font/google";
 import "./globals.css";
 import ResponsiveNav from "@/components/Home/Navbar/ResponsiveNav";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const ovo = Ovo({
   subsets: ["latin"],
+  weight: ["400"],
 });
 
 const jost = Jost({
-  variable: "--font-geist-sans",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -25,7 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${jost.variable} antialiased`}>
+      <body className={`${jost.className} ${ovo.className} antialiased`}>
         <ResponsiveNav />
         {children}
       </body>

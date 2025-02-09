@@ -1,9 +1,10 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import { Arrowupright, Bars, logo } from "@/public";
+import { logo } from "@/public";
 import { navLinks } from "@/constants/constant";
 import Link from "next/link";
+import { ArrowUpRightIcon, Bars2Icon } from "@heroicons/react/24/outline";
 
 type Props = {
   openNav: () => void;
@@ -52,19 +53,13 @@ const Nav = ({ openNav }: Props) => {
             <span className="absolute w-64 h-0 transition-all duration-300 origin-center rotate-45 -translate-x-20 bg-accent top-1/2 group-hover:h-64 group-hover:-translate-y-32 ease"></span>
             <span className="relative text-accent transition duration-300 group-hover:text-white ease flex items-center gap-2">
               Confirm RSVP
-              <Image
-                src={Arrowupright}
-                alt={"arrow"}
-                className="text-white w-4 h-4 object-cover hover:text-white"
-              />
+              <ArrowUpRightIcon className="h-4 w-4 text-accent group-hover:text-white" />
             </span>
           </a>
           {/* Hamburger Menu */}
-          <Image
-            src={Bars}
-            alt={"menu"}
+          <Bars2Icon
             onClick={openNav}
-            className="h-8 w-8 cursor-pointer desktop:hidden"
+            className="w-8 h-8 text-accent cursor-pointer desktop:hidden"
           />
         </div>
       </div>

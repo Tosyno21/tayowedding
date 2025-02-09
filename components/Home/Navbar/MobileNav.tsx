@@ -1,8 +1,7 @@
 import { navLinks } from "@/constants/constant";
-import { Arrowupright, closeBtn } from "@/public";
 import Link from "next/link";
 import React from "react";
-import Image from "next/image";
+import { ArrowUpRightIcon, XMarkIcon } from "@heroicons/react/24/outline";
 
 type Props = {
   showNav: boolean;
@@ -31,20 +30,16 @@ const MobileNav = ({ closeNav, showNav }: Props) => {
           <span className="absolute w-64 h-0 transition-all duration-300 origin-center rotate-45 -translate-x-20 bg-accent top-1/2  ease"></span>
           <span className="relative text-white transition duration-300 ease flex items-center gap-2">
             Confirm RSVP
-            <Image
-              src={Arrowupright}
-              alt={"arrow"}
-              className="text-white w-4 h-4 object-cover"
-            />
+            <ArrowUpRightIcon className="h-4 w-4 text-white" />
           </span>
         </a>
         {/* Close Btn */}
-        <Image
-          src={closeBtn}
-          alt={"close"}
-          onClick={closeNav}
-          className="absolute top-[20px] right-[20px] w-12 cursor-pointer"
-        />
+        <div className="text-white bg-white">
+          <XMarkIcon
+            onClick={closeNav}
+            className="text-white absolute top-[30px] right-[20px] cursor-pointer w-8 h-8"
+          />
+        </div>
       </div>
     </div>
   );
